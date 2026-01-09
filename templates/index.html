@@ -11,6 +11,8 @@ Below will be a submit form which will redirect to results.html.
 -->
 {% extends "base.html" %}
 {% block content %}
+<div class="outside">
+<div class="screen">
 <p>
     Welcome to your Personal Video Game Recommender! There's just three simple steps you need to take
     before getting your recommendations.<br><br>
@@ -26,6 +28,7 @@ Below will be a submit form which will redirect to results.html.
 
     3. Press submit and get your recommendations!
 </p>
+<div class="center">
 <form action="/results" method="post">
     <p>
         <label for="user_id">Steam ID</label><br>
@@ -39,4 +42,7 @@ Below will be a submit form which will redirect to results.html.
         <input type="submit" value="Submit">
     </p>
 </form>
+</div>
+</div>
+</div>
 {% endblock %}

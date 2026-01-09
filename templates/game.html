@@ -8,14 +8,19 @@ I will definitely consider more as the project progresses towards the finished p
 -->
 {% extends "base.html" %}
 {% block content %}
+<div class="outside">
+<div class="screen">
 
-<img src={{input_game["background_image"]}} alt="images" style="width:600px;height:500px;margin-left:150px">
+<div class="image-container">
+<img src={{input_game["background_image"]}} alt="images">
+
 
 {% if input_game["background_image_additional"] != null %}
-<img src={{input_game["background_image_additional"]}} alt="images" style="width:600px;height:500px">
+<img src={{input_game["background_image_additional"]}} alt="images">
 {% endif %}
+</div>
 
-    <h2 style="margin-left:150px">{{input_game["name"]}}</h2>
+    <h2>{{input_game["name"]}}</h2>
 
 <p>
     <b>Genres: </b>{{input_game["genres"][0]["name"]}}
@@ -58,5 +63,6 @@ I will definitely consider more as the project progresses towards the finished p
     {% endif %}
     {% endfor %}
 </p>
-
+</div>
+</div>
 {% endblock %}

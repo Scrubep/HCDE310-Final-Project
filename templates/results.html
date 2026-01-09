@@ -12,13 +12,17 @@ Each game will also be clickable which will lead to game.html
 -->
 {% extends "base.html" %}
 {% block content %}
+<div class="outside">
+<div class="screen">
 <ul>
     <h2>Your Top Games and Playtimes:</h2>
+    <p>
 {% for game in playtimes %}
-    <b>{{game}}: </b>{{playtimes[game]}} mins<br>
+   <b>{{game}}: </b>{{playtimes[game]}} mins<br>
 {% endfor %}
+    </p>
 </ul>
-
+<div class="center">
 <table class="table_center">
 {% for game in game_list %}
     {% if game_list.index(game) == 0 or game_list.index(game) % 5 == 0 %}
@@ -26,7 +30,9 @@ Each game will also be clickable which will lead to game.html
         <td>
             <form action="/game" method="post">
             <button type="submit" name="input_game" value="{{game['slug']}}">
-                <img src={{game["background_image"]}} alt="images" style="width:250px;height:200px"><br>
+                <img src={{game["background_image"]}} alt="images" 
+                style="width:100%;
+                height:100%;"><br>
             {{game["name"]}}
             </button>
             </form>
@@ -35,7 +41,9 @@ Each game will also be clickable which will lead to game.html
         <td>
             <form action="/game" method="post">
             <button type="submit" name="input_game" value="{{game['slug']}}">
-                <img src={{game["background_image"]}} alt="images" style="width:250px;height:200px"><br>
+                <img src={{game["background_image"]}} alt="images" 
+                style="width:100%;
+                height:100%;"><br>
             {{game["name"]}}
             </button>
             </form>
@@ -45,7 +53,9 @@ Each game will also be clickable which will lead to game.html
     <td>
         <form action="/game" method="post">
         <button type="submit" name="input_game" value="{{game['slug']}}">
-            <img src={{game["background_image"]}} alt="images" style="width:250px;height:200px"><br>
+            <img src={{game["background_image"]}} alt="images" 
+            style="width:100%;
+                height:100%;"><br>
             {{game["name"]}}
         </button>
         </form>
@@ -53,5 +63,7 @@ Each game will also be clickable which will lead to game.html
     {% endif %}
 {% endfor %}
 </table>
-
+</div>
+</div>
+</div>
 {% endblock %}
