@@ -39,7 +39,7 @@ Each game will also be clickable which will lead to game.html
         <td>
             <form action="/game" method="post">
             <button type="submit" name="input_game" value="{{game['slug']}}">
-                <img src={{game["background_image"]}} alt="images"><br>
+                <img src={{game["background_image"]}} alt="images">
             {{game["name"]}}
             </button>
             </form>
@@ -49,9 +49,7 @@ Each game will also be clickable which will lead to game.html
     <td>
         <form action="/game" method="post">
         <button type="submit" name="input_game" value="{{game['slug']}}">
-            <img src={{game["background_image"]}} alt="images" 
-            style="width:100%;
-                height:100%;"><br>
+            <img src={{game["background_image"]}} alt="images">
             {{game["name"]}}
         </button>
         </form>
