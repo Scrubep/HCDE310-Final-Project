@@ -68,11 +68,18 @@ input[type="number"] {
 
 button[type="submit"] {
     width: 100%;
-    max-width: 100%;
-    aspect-ratio: 250 / 200;
-    box-sizing: border-box;
-    padding: 6px;
-    font-size: clamp(12px, 2vw, 16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+button[type="submit"] img {
+    width: 100%;
+    height: auto;          /* 👈 prevents stretching */
+    aspect-ratio: 16 / 9;  /* game cover ratio (adjust if needed) */
+    object-fit: cover;
+    border-radius: 0.25em;
 }
 
 .screen {
@@ -115,4 +122,19 @@ body {
     margin: 0;
     padding: 0;
     font-family: "pixelify sans";
+}
+
+@media (max-width: 768px) {
+    table.table_center {
+        width: 100%;
+    }
+
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    button[type="submit"] img {
+        aspect-ratio: 16 / 9;
+    }
 }
