@@ -116,3 +116,15 @@ body {
     padding: 0;
     font-family: "pixelify sans";
 }
+
+@media (max-width: 768px) {
+    .image-container {
+        width: 100%;
+        aspect-ratio: auto;
+    }
+
+    button[type="submit"] {
+        aspect-ratio: auto;
+        padding: 12px;
+    }
+}
